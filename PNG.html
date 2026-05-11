@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CURSOS DE OFIMÁTICA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/* GENERAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background-color:#0f2027;
+    color:#e0e0e0;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+
+/* PORTADA */
+header{
+    background:#0f2027;
+    color:white;
+    padding:90px 30px 40px;
+    text-align:center;
+    position:relative;
+}
+
+/* BARRA SUPERIOR */
+nav{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    background:linear-gradient(90deg,#00c6ff,#0072ff);
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    padding:14px 20px;
+    text-decoration:none;
+    transition:0.3s;
+    font-weight:600;
+}
+
+nav a:hover{
+    background-color:#0f2027;
+    transform:scale(1.1);
+    border-radius:5px;
+}
+
+/* CONTENIDO */
+.contenido-seccion{
+    display:none;
+    padding:10px 30px 40px;
+    text-align:center;
+    animation:aparecer 0.5s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* TITULOS */
+h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:42px;
+    letter-spacing:2px;
+    text-shadow:0px 0px 10px #00c6ff;
+    margin-top:10px;
+}
+
+h2{
+    font-family:'Orbitron',sans-serif;
+    font-size:35px;
+    color:#00c6ff;
+    margin-bottom:20px;
+    text-shadow:0px 0px 10px #0072ff;
+}
+
+/* BIENVENIDA */
+.bienvenida{
+    font-size:18px;
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* LOGO */
+.logo{
+    width:250px;
+    display:block;
+    margin:20px auto;
+    filter:drop-shadow(0 0 10px #00c6ff);
+}
+
+/* TEXTOS */
+p, li{
+    font-size:16px;
+    line-height:1.7;
+    max-width:800px;
+    margin:auto;
+}
+
+/* PRODUCTOS */
+#productos{
+    padding-top:0px;
+}
+
+.titulo-productos{
+    margin-top:-55px;
+    margin-bottom:20px;
+    font-size:45px;
+    position:relative;
+    z-index:10;
+}
+
+/* CONTENEDOR PRODUCTOS */
+.contenedor-productos{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:35px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
+
+/* TARJETAS */
+.card{
+    width:320px;
+    height:470px;
+    background:#1e293b;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.5);
+    transition:0.4s;
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #00c6ff;
+}
+
+/* IMAGENES */
+.img-producto{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+}
+
+/* CONTENIDO TARJETAS */
+.card-contenido{
+    padding:22px;
+    text-align:center;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.card-contenido h3{
+    color:white;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.card-contenido p{
+    color:#cbd5e1;
+    font-size:16px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* BOTON */
+.btn{
+    display:inline-block;
+    padding:12px 28px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+/* PROMOCIONES */
+#promociones{
+    padding-top:0px;
+}
+
+.promo{
+    background:#1e293b;
+    border:4px solid #00c6ff;
+    padding:8px 30px;
+    font-size:45px;
+    font-weight:bold;
+    color:#00c6ff;
+    margin-bottom:15px;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,198,255,0.5);
+    font-family:'Orbitron',sans-serif;
+    display:inline-block;
+}
+
+.iconos{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.iconos img{
+    width:90px;
+}
+
+.iconos img:nth-child(1){
+    transform:rotate(-10deg);
+}
+
+.iconos img:nth-child(2){
+    transform:rotate(0deg);
+}
+
+.iconos img:nth-child(3){
+    transform:rotate(10deg);
+}
+
+.servicios{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.servicio{
+    width:300px;
+    background:#1e293b;
+    border:2px solid #00c6ff;
+    border-radius:25px;
+    padding:18px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.5);
+}
+
+.servicio h3{
+    text-align:center;
+    font-size:25px;
+    color:#00c6ff;
+    margin-bottom:15px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.servicio ul{
+    list-style:none;
+}
+
+.servicio ul li{
+    font-size:15px;
+    font-weight:bold;
+    margin-bottom:12px;
+    line-height:1.4;
+    color:#dbeafe;
+}
+
+.servicio ul li::before{
+    content:"✔ ";
+    color:#00ff88;
+    font-weight:bold;
+}
+
+/* SERVICIOS */
+#servicios{
+    min-height:100vh;
+    margin-top:-20px;
+    padding-top:0px;
+    overflow:hidden;
+}
+
+/* TITULO SERVICIOS */
+#servicios h2{
+    margin-top:10px;
+    margin-bottom:18px;
+    display:block;
+    font-size:42px;
+}
+
+/* CONTENEDOR */
+.servicios-contenedor{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:30px;
+    margin-top:10px;
+    padding-bottom:80px;
+}
+
+/* IZQUIERDA */
+.servicios-izquierda{
+    width:42%;
+}
+
+/* DERECHA */
+.servicios-derecha{
+    width:42%;
+}
+
+/* CAJAS */
+.servicio-box{
+    background:#1e293b;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.5);
+    transition:0.4s;
+}
+
+.servicio-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px #00c6ff;
+}
+
+.servicio-abajo{
+    margin-top:18px;
+}
+
+/* TITULOS */
+.servicio-box h3{
+    font-family:'Orbitron',sans-serif;
+    color:#00c6ff;
+    margin-bottom:12px;
+    font-size:22px;
+    text-align:center;
+}
+
+/* LISTAS */
+.servicio-box ul{
+    padding-left:20px;
+    text-align:left;
+}
+
+.servicio-box ul li{
+    color:#dbeafe;
+    margin-bottom:7px;
+    font-size:15px;
+}
+
+/* IMAGEN */
+.imagen-servicios{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:12px;
+}
+
+.imagen-servicios img{
+    width:100%;
+    max-width:390px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,198,255,0.4);
+}
+
+/* CONTACTOS */
+#contacto{
+    background:#0f2027;
+    min-height:100vh;
+    padding-top:0px;
+}
+
+.contacto{
+    width:100%;
+    max-width:420px;
+    margin:auto;
+    margin-top:15px;
+    background:#1e293b;
+    border:2px solid #00c6ff;
+    border-radius:25px;
+    padding:22px 22px;
+    box-shadow:0 0 20px rgba(0,198,255,0.4);
+    color:white;
+}
+
+.contacto h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:28px;
+    margin-bottom:10px;
+    text-align:center;
+    color:#00c6ff;
+}
+
+.contacto p{
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:20px;
+    color:#dbeafe;
+    text-align:center;
+}
+
+.datos{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.dato{
+    background:rgba(255,255,255,0.08);
+    padding:14px;
+    border-radius:18px;
+    transition:0.3s;
+    border:1px solid rgba(0,198,255,0.3);
+}
+
+.dato:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 15px #00c6ff;
+}
+
+.dato h3{
+    margin-bottom:8px;
+    font-size:17px;
+    color:#00c6ff;
+}
+
+.dato span{
+    color:#f8fafc;
+    font-size:14px;
+}
+
+.redes{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+}
+
+.redes a{
+    text-decoration:none;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.12);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:18px;
+    transition:0.3s;
+    border:1px solid rgba(0,198,255,0.4);
+}
+
+.redes a:hover{
+    background:#00c6ff;
+    color:#0f2027;
+    transform:translateY(-5px);
+}
+
+/* FOOTER */
+footer{
+    background:#111827;
+    color:#00c6ff;
+    text-align:center;
+    padding:15px;
+    font-size:16px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    body{
+        overflow-y:auto;
+    }
+
+    .servicios-contenedor{
+        flex-direction:column;
+    }
+
+    .servicios-izquierda,
+    .servicios-derecha{
+        width:100%;
+    }
+
+    .imagen-servicios img{
+        max-width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#promociones">Promociones</a>
+<a href="#servicios">Servicios</a>
+<a href="#contacto">Contactos</a>
+</nav>
+
+<div id="contenido-portada">
+
+<img src="logo.png" alt="Logo" class="logo">
+
+<h1>CURSOS DE OFIMÁTICA</h1>
+
+<p style="font-size:20px; margin-top:15px; color:#d9f8ff;">
+Domina Word, Excel y PowerPoint
+</p>
+
+</div>
+
+</header>
+
+<!-- INICIO -->
+<section id="inicio" class="contenido-seccion" style="display:block;">
+
+<p class="bienvenida">
+Bienvenido a nuestra plataforma interactiva de cursos de ofimática online.
+Aquí encontrarás formación práctica y flexible para dominar herramientas
+como Word, Excel y PowerPoint, mejorando tus habilidades académicas y profesionales.
+</p>
+
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="contenido-seccion">
+
+<h2 class="titulo-productos">PRODUCTOS</h2>
+
+<div class="contenedor-productos">
+
+<div class="card">
+<img src="word1.png" alt="Word" class="img-producto">
+
+<div class="card-contenido">
+<h3>WORD</h3>
+
+<p>
+Aprende a crear documentos profesionales, informes y trabajos modernos.
+</p>
+
+<a href="#" class="btn">Ver Más</a>
+</div>
+</div>
+
+<div class="card">
+<img src="excel1.png" alt="Excel" class="img-producto">
+
+<div class="card-contenido">
+<h3>EXCEL</h3>
+
+<p>
+Domina fórmulas, tablas y gráficos de manera profesional.
+</p>
+
+<a href="#" class="btn">Ver Más</a>
+</div>
+</div>
+
+<div class="card">
+<img src="powerpoint1.png" alt="PowerPoint" class="img-producto">
+
+<div class="card-contenido">
+<h3>POWERPOINT</h3>
+
+<p>
+Diseña presentaciones creativas e impactantes para tus proyectos.
+</p>
+
+<a href="#" class="btn">Ver Más</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PROMOCIONES -->
+<section id="promociones" class="contenido-seccion">
+
+<div class="promo">
+PROMO!!
+</div>
+
+<div class="iconos">
+
+<img src="https://img.icons8.com/color/452/ms-word.png" alt="Word">
+<img src="https://img.icons8.com/color/452/ms-excel.png" alt="Excel">
+<img src="https://img.icons8.com/color/452/ms-powerpoint.png" alt="PowerPoint">
+
+</div>
+
+<div class="servicios">
+
+<div class="servicio">
+<h3>WORD</h3>
+
+<ul>
+<li>ACCESO A FORMATOS PROFESIONALES LISTOS PARA EDITAR</li>
+<li>CORRECCIÓN Y REVISIÓN DE TUS DOCUMENTOS</li>
+<li>MATERIAL PRÁCTICO PARA MEJORAR TUS TRABAJOS</li>
+<li>APOYO PERSONALIZADO DURANTE EL APRENDIZAJE</li>
+</ul>
+
+</div>
+
+<div class="servicio">
+<h3>EXCEL</h3>
+
+<ul>
+<li>ARCHIVOS CON EJERCICIOS REALES PARA PRACTICAR</li>
+<li>PLANTILLAS DE TABLAS Y CÁLCULOS GRATIS</li>
+<li>RESOLUCIÓN DE EJERCICIOS PASO A PASO</li>
+<li>ASESORÍA PARA APLICAR EN TAREAS O NEGOCIO</li>
+</ul>
+
+</div>
+
+<div class="servicio">
+<h3>POWER POINT</h3>
+
+<ul>
+<li>DISEÑOS DE DIAPOSITIVAS LISTOS PARA USAR</li>
+<li>EJEMPLOS DE PRESENTACIONES COMO OBSEQUIO</li>
+<li>CLASES DE REFUERZO SIN COSTO ADICIONAL</li>
+<li>PRÁCTICAS GUIADAS PARA HABLAR CON SEGURIDAD</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="contenido-seccion">
+
+<h2>SERVICIOS</h2>
+
+<div class="servicios-contenedor">
+
+<div class="servicios-izquierda">
+
+<div class="servicio-box">
+<h3>WORD :</h3>
+
+<ul>
+<li>Elaboración de documentos profesionales</li>
+<li>Creación de currículums</li>
+<li>Desarrollo de trabajos académicos</li>
+<li>Conversión de archivos a PDF</li>
+</ul>
+
+</div>
+
+<div class="servicio-box servicio-abajo">
+<h3>EXCEL :</h3>
+
+<ul>
+<li>Elaboración de hojas de cálculo</li>
+<li>Creación de tablas y gráficos</li>
+<li>Organización de datos</li>
+<li>Fórmulas y funciones básicas</li>
+</ul>
+
+</div>
+</div>
+
+<div class="servicios-derecha">
+
+<div class="servicio-box">
+<h3>POWER POINT :</h3>
+
+<ul>
+<li>Diseño de presentaciones profesionales</li>
+<li>Creación de diapositivas animadas</li>
+<li>Uso de imágenes y gráficos</li>
+<li>Exposiciones académicas y empresariales</li>
+</ul>
+
+</div>
+
+<div class="imagen-servicios">
+<img src="ofrecemos.png" alt="Servicios">
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- CONTACTOS -->
+<section id="contacto" class="contenido-seccion">
+
+<div class="contacto">
+
+<h1>Contáctanos</h1>
+
+<p>
+Comunícate con nosotros para más información sobre nuestros cursos y servicios.
+</p>
+
+<div class="datos">
+
+<div class="dato">
+<h3><i class="fa-solid fa-phone"></i> Teléfono</h3>
+<span>+593 999 999 999</span>
+</div>
+
+<div class="dato">
+<h3><i class="fa-solid fa-envelope"></i> Correo Electrónico</h3>
+<span>cursosofimaticos@gmail.com</span>
+</div>
+
+<div class="dato">
+<h3><i class="fa-solid fa-location-dot"></i> Dirección</h3>
+<span>Napo - Arosemena Tola</span>
+</div>
+
+</div>
+
+<div class="redes">
+<a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Cursos de Ofimática
+</footer>
+
+<script>
+
+const enlaces = document.querySelectorAll('nav a');
+const secciones = document.querySelectorAll('.contenido-seccion');
+
+enlaces.forEach(enlace => {
+
+enlace.addEventListener('click', function(e){
+
+e.preventDefault();
+
+const destino = this.getAttribute('href');
+
+secciones.forEach(sec => {
+sec.style.display = 'none';
+});
+
+const mostrar = document.querySelector(destino);
+
+const portada = document.querySelector('#contenido-portada');
+
+if(destino === '#inicio'){
+portada.style.display = 'block';
+}else{
+portada.style.display = 'none';
+}
+
+mostrar.style.display = 'block';
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
